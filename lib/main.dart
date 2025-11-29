@@ -160,8 +160,8 @@ class MyHomePage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text("ที่อยู่"),
                           Text(
                             "ชลบุรี",
@@ -201,7 +201,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20),
                   Center(
                     child: ElevatedButton(
                       onPressed: () => Navigator.pushNamed(context, '/Second'),
@@ -231,6 +231,170 @@ class SecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("SecondPage")));
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: ClipOval(
+                      child: Image.network(
+                        "https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        width: 95,
+                        height: 95,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 17),
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '10',
+                              style: TextStyle(fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              'กำลังติดตาม',
+                              style: TextStyle(fontWeight: FontWeight.w200),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.symmetric(
+                            vertical: BorderSide(
+                              color: Colors.grey.shade300,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        margin: EdgeInsets.symmetric(vertical: 17),
+                        padding: EdgeInsets.all(9),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '1M',
+                              style: TextStyle(fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              'ผู้ติดตาม',
+                              style: TextStyle(fontWeight: FontWeight.w200),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 17),
+                        padding: EdgeInsets.all(9),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '100M',
+                              style: TextStyle(fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              'ถูกใจและบันทึก',
+                              style: TextStyle(fontWeight: FontWeight.w200),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Phattara Wongnil',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Padding(padding: EdgeInsets.all(2)),
+                        SizedBox(height: 10),
+                        Icon(Icons.verified, color: Colors.blue),
+                      ],
+                    ),
+                    SizedBox(height: 7.5),
+                    Row(
+                      children: [
+                        Icon(Icons.tiktok, size: 15),
+                        Text(
+                          'Phattara23',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5),
+              Row(
+                children: [
+                  Container(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.pushNamed(context, '/Second'),
+                      child: Text("ติดตาม"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 120,
+                          vertical: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Icon(Icons.share, size: 30),
+                ],
+              ),
+              SizedBox(height: 30),
+
+              Row(
+                children: [
+                  Image.network(
+                    "https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    width: 180,
+                    height: 180,
+                    fit: BoxFit.cover,
+                  ),
+                  Padding(padding: EdgeInsets.all(10)),
+                  Image.network(
+                    "https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                    width: 180,
+                    height: 180,
+                    fit: BoxFit.cover,
+                  ),
+                ],
+
+              ),
+
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
